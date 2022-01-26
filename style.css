@@ -1,0 +1,36 @@
+body{
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+.conteiner{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;  
+    
+}
+
+.wrap-btn{
+    margin-bottom: 100px;
+}
+
+/* .wrapper{
+    text-align: start;
+} */
+
+th{
+    text-align: start;
+}
+
+table {
+    border-collapse: collapse;    
+    
+ }
+
+td{
+    border-bottom: 1px solid grey;
+    padding: 20px 40px 20px 0;
+    
+}
