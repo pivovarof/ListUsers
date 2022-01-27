@@ -13,8 +13,8 @@
 <body>
     <div class="conteiner">
         <div class="wrap-btn">
-            <button>Add row</button>
-            <button>Remove all</button>
+            <button type="button" id="addBtn">Add row</button>
+            <button type="button" id="removeBtn">Remove all</button>
         </div>
         <div class="wrapper">            
             <table>
@@ -27,81 +27,14 @@
                         <th></th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <input type="text">
-                        </td>
-                        <td>
-                            <input type="email">
-                        </td>
-                        <td>03/20/21</td>
-                        <td>
-                            <button>
-                                <i class="fas fa-pencil-alt"></i>
-                            </button>
-                        </td>
-                        <td>
-                            <button>
-                                <i class="far fa-trash-alt"></i>
-                            </button>
-                        </td>
-                        <td>
-                            <button>Save</button>
-                            <button>Confirm</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="text">
-                        </td>
-                        <td>
-                            <input type="email">
-                        </td>
-                        <td>03/20/21</td>
-                        <td>
-                            <button>
-                                <i class="fas fa-pencil-alt"></i>
-                            </button>
-                        </td>
-                        <td>
-                           <button>
-                            <i class="far fa-trash-alt"></i>
-                           </button> 
-                        </td>
-                        <td>
-                            <button>Save</button>
-                            <button>Confirm</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="text">
-                        </td>
-                        <td>
-                            <input type="email">
-                        </td>
-                        <td>03/20/21</td>
-                        <td>
-                            <button>
-                                <i class="fas fa-pencil-alt"></i>
-                            </button>
-                        </td>
-                        <td>
-                            <button>
-                                <i class="far fa-trash-alt"></i>
-                            </button> 
-                        </td>
-                        <td>
-                            <button>Save</button>
-                            <button>Confirm</button>
-                        </td>
-                    </tr>
-                   
+                <tbody id="tbody">
+                    
+                    
                 </tbody>                
             </table>
         </div>
     </div>
+<script src="./script.js"></script>    
 </body>
 
 </html>

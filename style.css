@@ -16,21 +16,58 @@ body{
     margin-bottom: 100px;
 }
 
-/* .wrapper{
-    text-align: start;
-} */
-
 th{
     text-align: start;
+    padding-bottom: 10px;
 }
 
 table {
-    border-collapse: collapse;    
+    border-collapse: collapse;
+    padding: 10px;       
     
  }
 
 td{
-    border-bottom: 1px solid grey;
-    padding: 20px 40px 20px 0;
+    border-bottom: 1px solid rgb(209, 205, 205);
+    padding: 20px 40px 20px 5px;  
+    margin: 5px;  
+}
+
+button{
+    padding: 5px;
+}
+
+input{
+    border: none;
+    border-color: #39c;
+    padding: 5px;
+    
+}
+
+input:hover, input:focus-within{
+    border: 2px solid #39c;
+}
+
+.saveBtn{
+    background-color: #35C121;
+    color: white; 
+    display: none; 
+    visibility: hidden;  
+}
+
+.confBtn{
+    background-color: tomato;
+    color: white;
+    display: none;
+    visibility: hidden;
+}
+
+.activeBtn{
+    display: block;
+    visibility: visible;
+}
+
+thead{
+    border-bottom: 2px solid rgb(209, 205, 205);
     
 }
