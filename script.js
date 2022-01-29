@@ -1,6 +1,8 @@
 const addBtn = document.getElementById('addBtn');
 const tbody = document.getElementById('tbody');
-const saveBtn = document.getElementsByClassName('saveBtn');
+let saveBtn = document.getElementsByClassName('saveBtn');
+
+
 
 
 let arrUsers;
@@ -33,31 +35,35 @@ const updatetLocal = () => {
     localStorage.setItem('arrUsers', JSON.stringify(arrUsers));
 }
 
+
+
 addBtn.addEventListener('click', () => {    
-    arrUsers.push(new UserAdd());
+    arrUsers.push(new UserAdd('', ''));
     updatetLocal();
     fillUsersList();    
 })
 
+
+
 function addObjUsers() {
     let user = new UserAdd;
-    arrUsers.push(user)
-    
+    arrUsers.push(user)    
 }
-let inInput = 'type="text" class="name" name="name"'
+
+
 
 const createUsersList = (user, index) => { 
-      
-     return(`<tr>
+    
+    return(`<tr>
      <td>
-         <input ${inInput}>
+         <input type="text" class="name input" name="name" value=${user.name} >
      </td>
      <td>
-         <input type="email" class="email" name="email">
+         <input type="email" class="email input" name="email"  value=${user.email}>
      </td>
      <td>${user.date}</td>
      <td>
-         <button>
+         <button onclick="changeUser(${index})">
              <i class="fas fa-pencil-alt"></i>
          </button>
      </td>
@@ -71,33 +77,53 @@ const createUsersList = (user, index) => {
          <button class="confBtn">Confirm</button>
      </td>
  </tr>`)
-            
+          
         
     }
 
-const fillUsersList = () => {
+    
+function fillUsersList() {
     tbody.innerHTML = '';
     if(arrUsers.length > 0){
-        arrUsers.forEach((item, index) => {
+        arrUsers.forEach((item, index) => {            
             tbody.innerHTML += createUsersList(item, index);
+            let inputName = document.querySelectorAll('.name');
+            let inputEmail = document.querySelectorAll('.email');
+            saveBtn = document.getElementsByClassName('saveBtn');
+
+            if(item.name !== '' && item.email !== ''){
+                inputName[index].setAttribute('disabled', 'disabled');
+                inputEmail[index].setAttribute('disabled', 'disabled'); 
+                saveBtn[index].classList.remove('activeBtn');
+            }
+            
         })
     }
 }
+fillUsersList()
+
+
 
 const saveUser = i => {
-    const inputName = document.querySelectorAll('.name')
-    const inputEmail = document.querySelectorAll('.email')
-    
+    inputName = document.querySelectorAll('.name');
+    inputEmail = document.querySelectorAll('.email'); 
+
     arrUsers.push(new UserAdd(inputName[i].value, inputEmail[i].value))
-    inInput = `type="text" class="name" name="name" readonly value=${inputName[i].value}`
+    arrUsers.splice(i, 1)    
     updatetLocal();
-    fillUsersList();
-    // arrUsers[i].name = inputName[i].value
-    // arrUsers[i].email = inputEmail[i].value
-    console.log(inputName[i].attributes = inInput);
+    fillUsersList();       
+    
 }
 
+const changeUser = i => {
+    inputName = document.querySelectorAll('.name');
+    inputEmail = document.querySelectorAll('.email');
 
+    inputName[i].removeAttribute('disabled');
+    inputEmail[i].removeAttribute('disabled');
+    saveBtn[i].classList.add('activeBtn');
+     
+}
 
 
 
